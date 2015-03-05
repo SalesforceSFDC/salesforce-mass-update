@@ -9,7 +9,11 @@
                 <apex:column headerValue="Unique Identifier" value="{!met.Name}" />
                 <apex:repeat var="f" value="{!$ObjectType.Contract__c.FieldSets.updateAll}">
                     <apex:column headerValue="{!f.label}">
-                        <apex:inputField value="{!met[f]}" onkeyup="j$('.{!f.fieldPath}').val(j$(this).val())"  />
+                        <apex:inputField value="{!met[f]}" onblur="if('{!f.type}'==='boolean'){
+                                                                    j$('.{!f.fieldPath}').prop('checked',j$(this).prop('checked'))
+                                                                    } else {
+                                                                    j$('.{!f.fieldPath}').val(j$(this).val())
+                                                                    }"  />
                     </apex:column>
                 </apex:repeat>
             </apex:pageBlockTable> 
