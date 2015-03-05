@@ -1,7 +1,7 @@
 # salesforce-mass-update
 Mass update utility that works with field sets
 
-Replace meter__c with whatever sObject you decided to use.
+Replace *contract__c* with whatever sObject you decided to use.
 
 Replace *updateAll* field set name with whatever field set name you've set up.
 
