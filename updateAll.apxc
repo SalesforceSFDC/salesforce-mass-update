@@ -1,0 +1,43 @@
+public class updateContracts {
+
+    public List<contract__c> meters { get; private set; }
+    public List<String> headers { get; private set; }
+    public contract__c oneMeter {get;set;}
+        
+    ApexPages.StandardSetController setCon;
+    public updateContracts(ApexPages.StandardSetController controller)
+    {
+        setCon = controller;
+        oneMeter = new contract__c ();
+        String queryFields = '';
+        for(Schema.FieldSetMember f : SObjectType.contract__c.FieldSets.updateAll.getFields()) {
+            if(queryFields.length() > 0) {
+                queryFields += ', ';
+            }
+            queryFields += f.getFieldPath();
+        }
+        contract__c[] meterIDs = setCon.getSelected();
+        this.meters = Database.query(
+            ' SELECT name, ' +
+                queryFields +
+            ' FROM ' +
+                ' contract__c ' +
+            ' WHERE ' +
+                ' name != null and id in:meterIDs ' +
+            ' order by name asc');
+    }
+
+    public PageReference mySave() { 
+            save2(); 
+            PageReference pageRef = new PageReference( '/' + ApexPages.currentPage().getParameters().get('id')); //redirects back to id
+            return pageRef ; 
+    } 
+    public void save2(){  
+        contract__c[] updatedMeter = new contract__c[]{};
+        for (contract__c met: meters){
+            updatedMeter.add(met);
+        }
+        update updatedMeter;
+    }
+    
+}
