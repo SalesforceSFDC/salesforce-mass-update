@@ -1,7 +1,5 @@
 public class updateContracts {
-
     public List<contract__c> meters { get; private set; }
-    public List<String> headers { get; private set; }
     public contract__c oneMeter {get;set;}
         
     ApexPages.StandardSetController setCon;
@@ -28,16 +26,13 @@ public class updateContracts {
     }
 
     public PageReference mySave() { 
-            save2(); 
-            PageReference pageRef = new PageReference( '/' + ApexPages.currentPage().getParameters().get('id')); //redirects back to id
-            return pageRef ; 
-    } 
-    public void save2(){  
-        contract__c[] updatedMeter = new contract__c[]{};
-        for (contract__c met: meters){
-            updatedMeter.add(met);
+        try{ 
+            update meters;
+        } catch (system.Dmlexception e) {
+            ApexPages.Message myMsg = new ApexPages.Message(ApexPages.Severity.ERROR,'Error: '+string.valueOf(e));
+            ApexPages.addMessage(myMsg);
         }
-        update updatedMeter;
+        PageReference pageRef = new PageReference( '/' + ApexPages.currentPage().getParameters().get('id')); //redirects back to id
+        return pageRef ; 
     }
-    
 }
