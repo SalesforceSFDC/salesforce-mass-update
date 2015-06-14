@@ -1,0 +1,38 @@
+<apex:page standardController="Opportunity" recordSetVar="opps" extensions="OpportunityMassUpdate">
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" />
+    <script type="text/javascript">
+    j$ = jQuery.noConflict();
+    </script>
+    <apex:form >        
+        <apex:pageBlock id="block">
+            <apex:pageBlockTable id="table" var="opp" value="{!dummyOpportunity}">
+                <apex:column headerValue="Unique Identifier" value="{!opp.Name}" />
+                <apex:repeat var="f" value="{!$ObjectType.Opportunity.FieldSets.updateAll}">
+                    <apex:column headerValue="{!f.label}">
+                        <apex:inputField value="{!opp[f]}" onchange="if('{!f.type}'==='boolean'){
+                                                                    j$('.{!f.fieldPath}').prop('checked',j$(this).prop('checked'))
+                                                                    } else {
+                                                                    j$('.{!f.fieldPath}').val(j$(this).val())
+                                                                    }"  />
+                    </apex:column>
+                </apex:repeat>
+            </apex:pageBlockTable> 
+        </apex:pageBlock>        
+    </apex:form> 
+
+    <apex:form >        
+        <apex:pageBlock id="block">
+            <apex:pageBlockTable id="table" var="opp" value="{!lstOpportunities}">
+                <apex:column headerValue="Unique Identifier" value="{!opp.Name}" />
+                <apex:repeat var="f" value="{!$ObjectType.Opportunity.FieldSets.updateAll}">
+                    <apex:column headerValue="{!f.label}">
+                        <apex:inputField value="{!opp[f]}" styleClass="{!f.fieldPath}" />
+                    </apex:column>
+                </apex:repeat>
+            </apex:pageBlockTable>
+            <apex:pageBlockButtons >        
+                <apex:commandButton value="Save" action="{!mySave}" />        
+            </apex:pageBlockButtons>
+        </apex:pageBlock>        
+    </apex:form> 
+</apex:page>
