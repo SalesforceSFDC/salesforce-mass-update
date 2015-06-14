@@ -1,7 +1,15 @@
 # salesforce-mass-update
+[![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png)](https://githubsfdeploy.herokuapp.com?owner=sjurgis&repo=salesforce-mass-update)
 Mass update utility that works with field sets.
 
 ![Use demonstration](http://i.imgur.com/zurchRP.gif)
+
+**Update**
+
+Added Deploy to Salesforce button. Changed example to work with Opportunities. Note, you'll still need to:
+  * Create UpdateAll field set on Opportunity (don't add Name field though)
+  * After deploy, create a list button pointing to the page
+  * Add button to page layouts
 
 Class:
 ```apex
@@ -89,13 +97,7 @@ Page:
 
 ```
 
-# Update:
-
-Added Deploy to Salesforce button. Changed example to work with Opportunities. Note, you'll still need to:
-  * Create UpdateAll field set on Opportunity (don't add Name field though)
-  * After deploy, create a list button pointing to the page
-  * Add button to page layouts
-
+# Previous version
 Previous version explains how to integrate with custom objects:
 Replace *contract__c* with whatever sObject you decided to use.
 
