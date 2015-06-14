@@ -1,6 +1,6 @@
-# salesforce-mass-update
+# salesforce-mass-update [![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png)](https://githubsfdeploy.herokuapp.com?owner=sjurgis&repo=salesforce-mass-update)
 
-Mass update utility that works with field sets.              [![Deploy to Salesforce](https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png)](https://githubsfdeploy.herokuapp.com?owner=sjurgis&repo=salesforce-mass-update)
+Mass update utility that works with field sets.
 
 ![Use demonstration](http://i.imgur.com/zurchRP.gif)
 
