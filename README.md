@@ -1,5 +1,8 @@
 # salesforce-mass-update
 Mass update utility that works with field sets.
+
+![Use demonstration](http://i.imgur.com/zurchRP.gif)
+
 Class:
 ```apex
 public class OpportunityMassUpdate {
@@ -85,8 +88,6 @@ Page:
 </apex:page>
 
 ```
-
-![Use demonstration](http://i.imgur.com/zurchRP.gif)
 
 # Update:
 
