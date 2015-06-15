@@ -7,8 +7,8 @@ Mass update utility that works with field sets.
 **Update**
 
 Added Deploy to Salesforce button. Changed example to work with Opportunities. Note, you'll still need to:
-  * Create UpdateAll field set on Opportunity (don't add Name field though)
-  * After deploy, create a list button pointing to the page
+  * After deploy, create a *list button* with checkboxes pointing Content Source to the page OpportunityMassUpdate
+  * Set permissions on page and class OpportunityMassUpdate to work for your users
   * Add button to page layouts
 
 Class:
