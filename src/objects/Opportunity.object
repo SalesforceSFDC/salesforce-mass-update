@@ -25,16 +25,4 @@
         </displayedFields>
         <label>updateAll</label>
     </fieldSets>
-    <webLinks>
-        <fullName>Mass_Update</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Mass Update</masterLabel>
-        <openType>sidebar</openType>
-        <page>opportunityMassUpdate</page>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-    </webLinks>
 </CustomObject>
